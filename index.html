@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducaFin - Portal de Educação Financeira (TCC)</title>
+    
+    <!-- Link para o seu arquivo CSS separado -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CORRIGIDO: Links completos das CDNs para os Gráficos (Chart.js) e Ícones (FontAwesome) -->
+    <script src="https://jsdelivr.net"></script>
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- 1. CABEÇALHO E NAVEGAÇÃO -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-wallet"></i> EducaFin
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#importancia">Por que Importa?</a></li>
+                <li><a href="#corta-gastos">Corta-Gastos</a></li>
+                <li><a href="#pesquisa-dados">Pesquisa & Dados</a></li>
+                <li><a href="#biblioteca">Biblioteca</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. HERO SECTION (APRESENTAÇÃO) -->
+    <section id="inicio">
+        <h1>Aprenda a cuidar do seu dinheiro de forma simples e sem complicação!</h1>
+        <p>Um guia prático feito para ajudar você a organizar suas contas, sair das dívidas e proteger o bolso da sua família.</p>
+        <a href="#importancia" class="btn-cta">Comece a Aprender Agora</a>
+    </section>
+
+    <!-- 3. SEÇÃO 1: POR QUE A EDUCAÇÃO FINANCEIRA IMPORTA? -->
+    <section id="importancia" class="container">
+        <h2>Por que a Educação Financeira Importa?</h2>
+        <p>Organizar o dinheiro não é só para quem é rico. É, principalmente, para proteger quem trabalha duro.</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fa-solid fa-house-chimney-crack"></i>
+                <h3>Segurança Familiar</h3>
+                <p>Saber para onde vai cada centavo evita surpresas e garante o pagamento do aluguel, luz e mercado em dias difíceis.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <h3>Adeus Dívidas</h3>
+                <p>Aprender a negociar com bancos e fugir dos juros altos traz paz de espírito e limpa o seu nome.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-piggy-bank"></i>
+                <h3>Reserva de Emergência</h3>
+                <p>Guardar nem que seja R$ 10 ou R$ 20 por mês ajuda você a não passar sufoco caso a geladeira quebre ou ocorra um imprevisto de saúde.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SEÇÃO 2: IDENTIFICANDO E CORTANDO GASTOS -->
+    <section id="corta-gastos">
+        <div class="container">
+            <h2>O Perigo dos Pequenos Gastos (Alerta de Desperdício)</h2>
+            <p>Muitas vezes o dinheiro some em coisas que nem percebemos. Veja o impacto desses pequenos vilões acumulados no período de um ano:</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pequeno Gasto Diário/Mensal</th>
+                            <th>Custo Estimado</th>
+                            <th>Prejuízo no Ano</th>
+                            <th>O que fazer no lugar? (Alternativa)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tarifa alta de Conta Corrente no Banco</td>
+                            <td>R$ 35,00 / mês</td>
+                            <td class="alerta-gasto">R$ 420,00</td>
+                            <td class="solucao-gasto">Mudar para uma Conta Digital Gratuita ou pacote essencial sem custos.</td>
+                        </tr>
+                        <tr>
+                            <td>Anuidade de Cartão de Crédito tradicional</td>
+                            <td>R$ 30,00 / mês</td>
+                            <td class="alerta-gasto">R$ 360,00</td>
+                            <td class="solucao-gasto">Ligar no banco pedindo isenção ou migrar para um cartão sem anuidade.</td>
+                        </tr>
+                        <tr>
+                            <td>Assinatura de streaming/TV que mal assiste</td>
+                            <td>R$ 45,00 / mês</td>
+                            <td class="alerta-gasto">R$ 540,00</td>
+                            <td class="solucao-gasto">Cancelar e utilizar canais e plataformas de vídeo gratuitos.</td>
+                        </tr>
+                        <tr>
+                            <td>Jogo de loteria ou apostas (bets) frequentes</td>
+                            <td>R$ 20,00 / semana</td>
+                            <td class="alerta-gasto">R$ 1.040,00</td>
+                            <td class="solucao-gasto">Colocar esse mesmo dinheiro em uma caixinha de rendimento automático.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SEÇÃO 3: PESQUISA E GRÁFICOS -->
+    <section id="pesquisa-dados" class="container">
+        <h2>A Realidade Financeira no Brasil</h2>
+        <p>Os dados mostram a importância urgente de aprendermos a lidar com as finanças para mudar o cenário nacional.</p>
+        
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>Endividamento no Brasil</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartEndividamento"></canvas>
+                </div>
+                <span class="footnote">* Dados com base no panorama geral de inadimplência das famílias brasileiras.</span>
+            </div>
+
+            <div class="chart-box">
+                <h3>Maiores Vilões do Orçamento Familiar</h3>
+                <div class="chart-wrapper">
+                    <canvas id="chartViloes"></canvas>
+                </div>
+                <span class="footnote">* Pesquisa focada em causas de superendividamento de famílias com renda até 2 salários mínimos.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SEÇÃO 4: BIBLIOTECA DE PESQUISA (ESTILO WIKIPÉDIA) -->
+    <section id="biblioteca">
+        <div class="container">
+            <h2>Biblioteca de Conhecimento</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem;">Pesquise conceitos e tire dúvidas rapidamente de forma simples.</p>
+            
+            <div class="search-container">
+                <input type="text" id="wikiSearch" class="search-box" placeholder="Digite uma palavra-chave para buscar... (Ex: Cartão, Juros, Dívidas)">
+            </div>
+
+            <div class="wiki-layout">
+                <!-- Barra Lateral -->
+                <aside>
+                    <h4>Navegar por Tópicos</h4>
+                    <br>
+                    <ul>
+                        <li><a href="#artigo-juros">Juros Compostos</a></li>
+                        <li><a href="#artigo-dividas">Renegociar Dívidas</a></li>
+                        <li><a href="#artigo-cartao">Cartão de Crédito</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Conteúdo dos Artigos -->
+                <main id="articlesList">
+                    <article class="wiki-article" id="artigo-juros">
+                        <h3>O que são Juros Compostos?</h3>
+                        <p>Os <span class="highlight-term">Juros Compostos</span> funcionam como uma bola de neve. Quando você investe, são os juros rendendo sobre os próprios juros, fazendo seu dinheiro crescer mais rápido com o passar do tempo. Porém, quando você deve ao banco, a bola de neve rola contra você, fazendo a dívida crescer absurdamente rápido de um mês para o outro.</p>
+                    </article>
+
+                    <article class="wiki-article" id="artigo-dividas">
+                        <h3>Como renegociar dívidas?</h3>
+                        <p>Para <span class="highlight-term">renegociar dívidas</span>, o primeiro passo é colocar no papel o valor real que você consegue pagar por mês. Nunca aceite a primeira proposta do banco se ela comprometer sua alimentação. Procure mutirões oficiais como o do Procon ou o Feirão Limpa Nome do Serasa, onde os descontos podem passar de 80% do valor total devido.</p>
+                    </article>
+
+                    <article class="wiki-article" id="artigo-cartao">
+                        <h3>Entendendo o Cartão de Crédito</h3>
+                        <p>O <span class="highlight-term">Cartão de Crédito</span> não é uma extensão do seu salário, ele é um empréstimo de curto prazo que você precisa pagar no mês seguinte. O maior perigo é pagar apenas o "valor mínimo" da fatura. Ao fazer isso, você entra no chamado crédito rotativo, que possui uma das taxas de juros mais caras e abusivas do mercado brasileiro.</p>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. RODAPÉ -->
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h4>EducaFin - TCC 2026</h4>
+                <p>Desenvolvido como projeto de conclusão de curso.</p>
+                <p>Curso: Análise e Desenvolvimento de Sistemas</p>
+            </div>
+            <div>
+                <h4>Acessibilidade</h4>
+                <p>Este site foi projetado para leitores de tela e navegação simplificada via celular.</p>
+            </div>
+        </div>
+        <div class="container footer-disclaimer">
+            <p><strong>Isenção de responsabilidade:</strong> As informações contidas neste portal possuem fins estritamente educativos para apresentação acadêmica e não constituem recomendação profissional oficial.</p>
+        </div>
+    </footer>
+
