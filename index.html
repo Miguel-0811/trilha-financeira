@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EducaFin - Portal de Educação Financeira (TCC)</title>
-    
+    <title>Trilha Financeira - Portal de Educação Financeira (TCC)</title>
+
     <!-- Link para o seu arquivo CSS separado -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- CORRIGIDO: Links completos das CDNs para os Gráficos (Chart.js) e Ícones (FontAwesome) -->
-    <script src="https://jsdelivr.net"></script>
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- CDNs para os Gráficos (Chart.js) e Ícones (FontAwesome) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
 
     <!-- 1. CABEÇALHO E NAVEGAÇÃO -->
     <header>
         <div class="logo">
-            <i class="fa-solid fa-wallet"></i> EducaFin
+            <i class="fa-solid fa-wallet"></i> Trilha Financeira
         </div>
         <nav>
             <ul>
@@ -28,8 +28,13 @@
                 <li><a href="#biblioteca">Biblioteca</a></li>
             </ul>
         </nav>
+        <button id="audioToggle" class="audio-toggle" type="button" aria-pressed="false" aria-label="Ouvir o conteúdo principal da página">
+            <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+            <span>Ouvir texto</span>
+        </button>
     </header>
 
+    <main id="conteudo-principal" tabindex="-1">
     <!-- 2. HERO SECTION (APRESENTAÇÃO) -->
     <section id="inicio">
         <h1>Aprenda a cuidar do seu dinheiro de forma simples e sem complicação!</h1>
@@ -41,7 +46,7 @@
     <section id="importancia" class="container">
         <h2>Por que a Educação Financeira Importa?</h2>
         <p>Organizar o dinheiro não é só para quem é rico. É, principalmente, para proteger quem trabalha duro.</p>
-        
+
         <div class="cards-grid">
             <div class="card">
                 <i class="fa-solid fa-house-chimney-crack"></i>
@@ -66,7 +71,7 @@
         <div class="container">
             <h2>O Perigo dos Pequenos Gastos (Alerta de Desperdício)</h2>
             <p>Muitas vezes o dinheiro some em coisas que nem percebemos. Veja o impacto desses pequenos vilões acumulados no período de um ano:</p>
-            
+
             <div class="table-responsive">
                 <table>
                     <thead>
@@ -112,7 +117,7 @@
     <section id="pesquisa-dados" class="container">
         <h2>A Realidade Financeira no Brasil</h2>
         <p>Os dados mostram a importância urgente de aprendermos a lidar com as finanças para mudar o cenário nacional.</p>
-        
+
         <div class="charts-container">
             <div class="chart-box">
                 <h3>Endividamento no Brasil</h3>
@@ -137,7 +142,7 @@
         <div class="container">
             <h2>Biblioteca de Conhecimento</h2>
             <p style="text-align: center; margin-bottom: 1.5rem;">Pesquise conceitos e tire dúvidas rapidamente de forma simples.</p>
-            
+
             <div class="search-container">
                 <input type="text" id="wikiSearch" class="search-box" placeholder="Digite uma palavra-chave para buscar... (Ex: Cartão, Juros, Dívidas)">
             </div>
@@ -155,7 +160,7 @@
                 </aside>
 
                 <!-- Conteúdo dos Artigos -->
-                <main id="articlesList">
+                <div id="articlesList">
                     <article class="wiki-article" id="artigo-juros">
                         <h3>O que são Juros Compostos?</h3>
                         <p>Os <span class="highlight-term">Juros Compostos</span> funcionam como uma bola de neve. Quando você investe, são os juros rendendo sobre os próprios juros, fazendo seu dinheiro crescer mais rápido com o passar do tempo. Porém, quando você deve ao banco, a bola de neve rola contra você, fazendo a dívida crescer absurdamente rápido de um mês para o outro.</p>
@@ -170,16 +175,17 @@
                         <h3>Entendendo o Cartão de Crédito</h3>
                         <p>O <span class="highlight-term">Cartão de Crédito</span> não é uma extensão do seu salário, ele é um empréstimo de curto prazo que você precisa pagar no mês seguinte. O maior perigo é pagar apenas o "valor mínimo" da fatura. Ao fazer isso, você entra no chamado crédito rotativo, que possui uma das taxas de juros mais caras e abusivas do mercado brasileiro.</p>
                     </article>
-                </main>
+                </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- 7. RODAPÉ -->
     <footer>
         <div class="container footer-grid">
             <div>
-                <h4>EducaFin - TCC 2026</h4>
+                <h4>Trilha Financeira - TCC 2026</h4>
                 <p>Desenvolvido como projeto de conclusão de curso.</p>
                 <p>Curso: Análise e Desenvolvimento de Sistemas</p>
             </div>
@@ -193,3 +199,18 @@
         </div>
     </footer>
 
+    <script src="script.js" defer></script>
+
+    <!-- Widget oficial VLibras: tradução do conteúdo para Libras. -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>
